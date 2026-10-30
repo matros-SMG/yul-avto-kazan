@@ -78,7 +78,7 @@
         timesBox.insertAdjacentHTML("beforeend", `<label class="s-chip"${past ? ' aria-disabled="true"' : ""}><input type="radio" name="time" value="${t}"${past ? " disabled" : firstFree ? " checked" : ""}><span>${t}</span></label>`);
         if (!past) firstFree = false;
       });
-      if (firstFree) timesBox.insertAdjacentHTML("beforeend", `<p class="s-demo">На сегодня окна закончились – выберите другой день.</p>`);
+      if (firstFree) timesBox.insertAdjacentHTML("beforeend", `<p class="s-demo">На сегодня окна закончились - выберите другой день.</p>`);
     };
     const update = () => {
       const s = booking.querySelector("input[name=svc]:checked"), d = daysBox.querySelector("input:checked"), t = timesBox.querySelector("input:checked");
@@ -88,7 +88,7 @@
     daysBox.addEventListener("change", () => { drawTimes(); update(); });
     booking.addEventListener("change", update);
     drawTimes();
-    // на сегодня окна закончились – сразу выбираем следующий день
+    // на сегодня окна закончились - сразу выбираем следующий день
     if (!timesBox.querySelector("input:not([disabled])")) { const next = daysBox.querySelectorAll("input")[1]; if (next) { next.checked = true; drawTimes(); } }
     update();
   }
@@ -96,7 +96,7 @@
   // ---- калькулятор
   const calc = document.querySelector("[data-s-calc]");
   if (calc) {
-    const per = JSON.parse(calc.dataset.per || "{}"); // { "canvas": "area" } – цена варианта умножается на значение поля area
+    const per = JSON.parse(calc.dataset.per || "{}"); // { "canvas": "area" } - цена варианта умножается на значение поля area
     const totalEl = calc.querySelector("[data-s-total]");
     let shown = 0;
     const animateTo = (v) => {
